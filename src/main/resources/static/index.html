@@ -6,21 +6,24 @@
     <meta name="description" content=""/>
     <title>Auth</title>
     <base href="/" />
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<h1>demo</h1>
+<h1>Github OAuth 2 demo</h1>
 <div class="container unauthorized">
     Github: <button class="btn-primary"><a href="/oauth2/authorization/github">Log in</a></button>
-    <button><a href="http://localhost:8080/user"> User </a></button>
+    <button><a href="http://localhost:8080/user"> User </a></button><br>
+    <h3>Jag vet inte om detta är rätt gjort, men User knappen ger inget utan att man loggat in.</h3>
 </div>
 
 <div class="container authorized" style="display: none">
     Logged in as: <span id="user"></span><br>
-    <button><a href="http://localhost:8080/user"> User </a></button>
+    <button class="btn-primary"><a href="http://localhost:8080/user"> User </a></button><br>
+    <h3>Men nu får man ut information om den inloggade användaren när man trycker på User knappen.</h3> <br>
+    Redirect to github gist creation page: <button class="btn-primary"><a href="https://gist.github.com/"> Create a gist </a></button>
 </div>
 
 <script type="text/javascript">
