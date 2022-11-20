@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content=""/>
+    <title>Auth</title>
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<h1>demo</h1>
+<div class="container unauthorized">
+    Github: <button class="btn-primary"><a href="/oauth2/authorization/github">Log in</a></button>
+    <button><a href="http://localhost:8080/user"> User </a></button>
+</div>
+
+<div class="container authorized" style="display: none">
+    Logged in as: <span id="user"></span><br>
+    <button><a href="http://localhost:8080/user"> User </a></button>
+</div>
+
+<script type="text/javascript">
+    $.get("/user", function(data) {
+            $("#user").html(data.name);
+            $(".unauthorized").hide()
+            $(".authorized").show()
+    });
+</script>
+
+</body>
+</html>
